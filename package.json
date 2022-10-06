@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -7,6 +7,10 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "url": "https://github.com/smallma876/smc-card-curso-u",
+    "type": "git"
+  },
   "engines": {
     "node": ">=10"
   },
@@ -17,7 +21,8 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "test:watch": "tsdx test --watch"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -47,17 +52,37 @@
     }
   ],
   "devDependencies": {
+    "@types/react-test-renderer": "^18.0.0",
     "@rollup/plugin-image": "^2.1.1",
     "@size-limit/preset-small-lib": "^8.1.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^8.1.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
-    "typescript": "^3.9.10"
+    "typescript": "^3.9.10",
+    "react-test-renderer": "^18.2.0"
+  },
+  "keywords": [
+    "product",
+    "card"
+  ],
+  "dependencies": {
+    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-react": "^7.18.6",
+    "babel-jest": "^29.1.2",
+    "jest": "^25.5.4"
+ 
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   }
 }
